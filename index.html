@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KREZ STORE — магазин чохлів та аксесуарів для смартфонів. ." />
+  <title>KREZ STORE — чохли та аксесуари</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <!-- Логотип: img с фолбэком на текст -->
+      <a href="#home" class="logo" aria-label="KREZ STORE — на головну">
+        <img src="images/logo.png" alt="KREZ STORE" class="logo-img" id="logoImg" />
+        <span class="logo-text" id="logoText" aria-hidden="true">
+          <span class="logo-krez">KREZ</span><span class="logo-store">STORE</span>
+        </span>
+      </a>
+
+      <!-- Поиск (десктоп) -->
+      <div class="header-search">
+        <label for="searchDesktop" class="sr-only">Пошук товарів</label>
+        <input
+          type="search"
+          id="searchDesktop"
+          class="search-input"
+          placeholder="Пошук: чохол, скло, кабель…"
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Действия -->
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="favBtn" aria-label="Обране">
+          <span class="icon">♥</span>
+          <span class="badge" id="favCount">0</span>
+        </button>
+        <button type="button" class="icon-btn" id="cartBtn" aria-label="Кошик">
+          <span class="icon">🛒</span>
+          <span class="badge badge--lime" id="cartCount">0</span>
+        </button>
+        <button type="button" class="icon-btn burger" id="burgerBtn" aria-label="Меню" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Навигация (десктоп) -->
+    <nav class="main-nav container" aria-label="Головна навігація">
+      <a href="#home">Головна</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#new">Новинки</a>
+      <a href="#sale">Знижки</a>
+      <a href="#shipping">Доставка і повернення</a>
+    </nav>
+
+    <!-- Мобильное меню -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Мобільна навігація" hidden>
+      <div class="mobile-search">
+        <label for="searchMobile" class="sr-only">Пошук товарів</label>
+        <input type="search" id="searchMobile" class="search-input" placeholder="Пошук…" autocomplete="off" />
+      </div>
+      <a href="#home" data-close>Головна</a>
+      <a href="#catalog" data-close>Каталог</a>
+      <a href="#new" data-close>Новинки</a>
+      <a href="#sale" data-close>Знижки</a>
+      <a href="#shipping" data-close>Доставка і повернення</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO / HOME ================= -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-tag">streetwear · чохли · аксесуари</p>
+          <h1 class="hero-title">
+            Тримай свій стиль<br />
+            <span class="accent">під контролем.</span>
+          </h1>
+          <p class="hero-desc">
+            KREZ STORE — це чохли, захисні скла та аксесуари для смартфонів
+            у streetwear-естетиці. Демонстраційна версія магазину:
+            ціни та наявність є прикладом і не є реальними пропозиціями.
+          </p>
+          <div class="hero-cta">
+            <a href="#catalog" class="btn btn--lime">Перейти до каталогу</a>
+			<a href="#new" class="btn btn--ghost">Новинки</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-blob"></div>
+          <div class="hero-bubble">KREZ</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CATALOG ================= -->
+    <section class="section" id="catalog" aria-labelledby="catalogTitle">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="catalogTitle" class="section-title">Каталог</h2>
+          <p class="section-sub">Оберіть категорію, бренд, модель або скористайтеся пошуком.</p>
+        </header>
+
+        <!-- Фильтры -->
+        <div class="filters" role="region" aria-label="Фільтри каталогу">
+          <div class="filter-field">
+            <label for="filterCategory">Категорія</label>
+            <select id="filterCategory">
+              <option value="">Усі категорії</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="filterBrand">Бренд телефону</label>
+            <select id="filterBrand">
+              <option value="">Усі бренди</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="filterModel">Модель телефону</label>
+            <select id="filterModel" disabled>
+              <option value="">Спочатку оберіть бренд</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="filterPrice">Ціна</label>
+            <select id="filterPrice">
+              <option value="">Будь-яка ціна</option>
+              <option value="0-300">до 300 ₴</option>
+              <option value="300-600">300 – 600 ₴</option>
+              <option value="600-1000">600 – 1000 ₴</option>
+              <option value="1000-99999">від 1000 ₴</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="sortSelect">Сортування</label>
+            <select id="sortSelect">
+              <option value="default">За замовчуванням</option>
+              <option value="price-asc">Спочатку дешевші</option>
+              <option value="price-desc">Спочатку дорожчі</option>
+              <option value="new">Спочатку новинки</option>
+            </select>
+          </div>
+
+          <div class="filter-field filter-field--action">
+            <button type="button" class="btn btn--ghost btn--sm" id="resetFilters">
+              Скинути фільтри
+            </button>
+          </div>
+        </div>
+
+        <!-- Активная строка поиска/статус -->
+        <p class="catalog-status" id="catalogStatus" role="status" aria-live="polite"></p>
+
+        <!-- Сетка товаров -->
+        <div class="grid products" id="productsGrid" aria-live="polite"></div>
+
+        <p class="empty-message" id="catalogEmpty" hidden>
+          За вашими фільтрами нічого не знайдено. Спробуйте скинути фільтри.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= NEW ================= -->
+    <section class="section section--alt" id="new" aria-labelledby="newTitle">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="newTitle" class="section-title">Новинки</h2>
+          <p class="section-sub">Свіжі надходження колекції KREZ.</p>
+        </header>
+        <div class="grid products" id="newGrid" aria-live="polite"></div>
+        <p class="empty-message" id="newEmpty" hidden>Поки що немає новинок.</p>
+      </div>
+    </section>
+
+    <!-- ================= SALE ================= -->
+    <section class="section" id="sale" aria-labelledby="saleTitle">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="saleTitle" class="section-title">Знижки</h2>
+          <p class="section-sub">Демонстраційні ціни зі знижкою — не є реальними акціями.</p>
+        </header>
+        <div class="grid products" id="saleGrid" aria-live="polite"></div>
+        <p class="empty-message" id="saleEmpty" hidden>Наразі знижок немає.</p>
+      </div>
+    </section>
+	<!-- ================= FAVORITES ================= -->
+    <section class="section section--alt" id="favorites" aria-labelledby="favTitle">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="favTitle" class="section-title">Обране</h2>
+          <p class="section-sub">Товари, які ви зберегли. Дані зберігаються локально у браузері.</p>
+        </header>
+        <div class="grid products" id="favGrid" aria-live="polite"></div>
+        <p class="empty-message" id="favEmpty" hidden>
+          Список обраного порожній. Натисніть ♥ на картці товару, щоб зберегти його.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SHIPPING ================= -->
+    <section class="section" id="shipping" aria-labelledby="shipTitle">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="shipTitle" class="section-title">Доставка і повернення</h2>
+          <p class="section-sub">Розділ у розробці — інформація буде додана після узгодження з постачальником.</p>
+        </header>
+
+        <div class="info-cards">
+          <article class="info-card">
+            <h3>Способи доставки</h3>
+            <p>
+              Детальні способи доставки (кур'єр, поштові сервіси, самовивіз)
+              будуть опубліковані після узгодження з постачальником.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Терміни та вартість</h3>
+            <p>
+              Строки та вартість доставки буде вказано після підтвердження
+              логістики. Наразі це демонстраційний розділ.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Повернення та обмін</h3>
+            <p>
+              Правила повернення й обміну з'являться після узгодження з
+              постачальником. Ми не вигадуємо умови заздалегідь.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-logo"><span class="logo-krez">KREZ</span> <span class="logo-store">STORE</span></p>
+        <p class="footer-desc">
+          Демонстраційний streetwear-магазин чохлів та аксесуарів.
+          Реальні замовлення поки не приймаються.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Розділи</h4>
+        <ul>
+          <li><a href="#home">Головна</a></li>
+          <li><a href="#catalog">Каталог</a></li>
+          <li><a href="#new">Новинки</a></li>
+          <li><a href="#sale">Знижки</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Інформація</h4>
+        <ul>
+          <li><a href="#shipping">Доставка і повернення</a></li>
+          <li><a href="#favorites">Обране</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Контакти </h4>
+        <ul>
+          <li>krez1store@gmail.com</li>
+          <li>+380 (97) 609-70-69</li>
+          <li>TikTok: krez.store</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© <span id="year"></span> KREZ STORE · Демонстраційна версія. Ціни та наявність — приклад.</p>
+    </div>
+  </footer>
+
+  <!-- ================= DRAWER: CART ================= -->
+  <div class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <header class="drawer-head">
+        <h2 id="cartTitle">Кошик</h2>
+        <button type="button" class="icon-btn" data-close-drawer aria-label="Закрити кошик">✕</button>
+      </header>
+      <div class="drawer-body" id="cartBody">
+	  <p class="empty-message">Кошик порожній.</p>
+      </div>
+      <footer class="drawer-foot">
+        <div class="cart-total">
+          <span>Разом:</span>
+          <strong id="cartTotal">0 ₴</strong>
+        </div>
+        <button type="button" class="btn btn--lime btn--block" id="checkoutBtn">
+          Оформити замовлення
+        </button>
+      </footer>
+    </aside>
+  </div>
+
+  <!-- ================= DRAWER: FAVORITES quick view ================= -->
+  <div class="drawer" id="favDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="favDrawerTitle">
+      <header class="drawer-head">
+        <h2 id="favDrawerTitle">Обране</h2>
+        <button type="button" class="icon-btn" data-close-drawer aria-label="Закрити обране">✕</button>
+      </header>
+      <div class="drawer-body" id="favDrawerBody">
+        <p class="empty-message">Список обраного порожній.</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ================= MODAL: PRODUCT ================= -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+      <button type="button" class="icon-btn modal-close" data-close-modal aria-label="Закрити">✕</button>
+      <div class="modal-body" id="productModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: CHECKOUT ================= -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button type="button" class="icon-btn modal-close" data-close-modal aria-label="Закрити">✕</button>
+      <div class="modal-body">
+        <h2 id="checkoutTitle">Оформлення замовлення (демо)</h2>
+        <p class="muted">
+          Це демонстраційна форма. Реальні замовлення не приймаються,
+          оплата не проводиться, дані не надсилаються на сервер.
+        </p>
+        <form id="checkoutForm" novalidate>
+          <div class="form-field">
+            <label for="cf-name">Ім'я *</label>
+            <input type="text" id="cf-name" name="name" required autocomplete="name" />
+            <small class="error" data-error-for="cf-name"></small>
+          </div>
+          <div class="form-field">
+            <label for="cf-phone">Контактний телефон *</label>
+            <input type="tel" id="cf-phone" name="phone" required autocomplete="tel" placeholder="+380…" />
+            <small class="error" data-error-for="cf-phone"></small>
+          </div>
+          <div class="form-field">
+            <label for="cf-city">Населений пункт *</label>
+            <input type="text" id="cf-city" name="city" required autocomplete="address-level2" />
+            <small class="error" data-error-for="cf-city"></small>
+          </div>
+          <div class="form-field">
+            <label for="cf-delivery">Спосіб доставки *</label>
+            <select id="cf-delivery" name="delivery" required>
+              <option value="">Оберіть спосіб</option>
+              <option value="courier">Кур'єр (демо)</option>
+              <option value="post">Поштовий сервіс (демо)</option>
+              <option value="pickup">Самовивіз (демо)</option>
+            </select>
+            <small class="error" data-error-for="cf-delivery"></small>
+          </div>
+          <div class="form-field">
+            <label for="cf-comment">Коментар (необов'язково)</label>
+            <textarea id="cf-comment" name="comment" rows="3"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn--lime">Підтвердити (демо)</button>
+          </div>
+		  <p class="form-success" id="checkoutSuccess" role="status" aria-live="polite" hidden>
+            Демонстраційне замовлення оформлено. Реальні замовлення поки не приймаються.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
