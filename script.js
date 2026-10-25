@@ -91,7 +91,7 @@
     },
     {
       id: "p05",
-      title: "Захисне скло 9H",
+      title: "Захистне Скло Privacy Neminute",
       category: "Захисні стекла",
       price: 199,
 	  stock: 0,
@@ -99,8 +99,8 @@
       isNew: false,
       isSale: false,
       image: "images/glass-protect.jpg",
-      brand: "Samsung",
-      models: ["Galaxy S23", "Galaxy S24", "Galaxy A54"],
+      brand: "Apple",
+      models: ["iPhone XR,11", "iphone XS,11 pro", "iphone XS max,11 pro max", "iphone 12,12 pro", "iphone 16e,14,13 pro,13", "iphone 14 plus,13 pro max", "iphone 14 pro max", "iphone 14 pro", "iphone 15,16", "iphone 15 plus,16 plus", "iphone 15 pro max", "iphone 15 pro", "16 pro max", "iphone 16 pro,17"],
       colors: [
         { name: "Прозорий", hex: "#E5E5E5" }
       ],
